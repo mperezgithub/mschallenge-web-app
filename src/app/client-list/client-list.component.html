@@ -1,0 +1,23 @@
+<br />
+<span class="main-title">Lista de Clientes</span>
+<br />
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th *ngFor="let head of headElements" scope="col">{{ head }} </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr mdbTableCol *ngFor="let cust of clients">
+      <th scope="row"></th>
+      <td>{{ cust.nombre }}</td>
+      <td>{{ cust.apellido }}</td>
+      <td>{{ cust.edad }}</td>
+      <td>{{ cust.fechaNacimiento }}</td>
+      <td>{{ cust.fechaProbableMuerte }}</td>
+      <!--td *ngIf="!filteredCustomers && !filteredCustomers.length" colspan="4">No customers found</td-->
+    </tr>
+  </tbody>
+</table>
+<br>

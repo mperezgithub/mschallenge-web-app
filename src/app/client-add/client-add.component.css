@@ -1,0 +1,13 @@
+input.ng-invalid{
+    border-color: red;
+}
+
+input.ng-untouched{
+    border-color:#ced4da;
+}
+
+.main-title{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 24px;
+    color:darkgreen;
+}

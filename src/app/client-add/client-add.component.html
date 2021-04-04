@@ -1,0 +1,60 @@
+<br />
+<span class="main-title">Alta de Clientes</span>
+<br />
+<div style="width: 400px; margin: auto;">
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Ingrese el Nombre"
+            id="title"
+            required
+            [(ngModel)]="client.nombre"
+            name="title"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="apellido">Apellido</label>
+          <input
+            class="form-control"
+            id="apellido"
+            placeholder="Ingrese el Apellido"
+            required
+            [(ngModel)]="client.apellido"
+            name="apellido"
+          />
+        </div>
+  
+        <div class="form-group">
+            <label for="edad">Edad</label>
+            <input
+              class="form-control"
+              id="edad"
+              placeholder="Ingrese la edad"
+              required minlength="1" maxlength="2" pattern="^[0-9]+$"
+              [(ngModel)]="client.edad"
+              name="edad"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="fechaNacimiento">Fecha de Nacimiento - dd-mm-yyyy</label>
+              <dp-date-picker [(ngModel)]="client.fechaNacimiento" [config]="datePickerConfig" theme="dp-material"></dp-date-picker>
+          </div>
+          <br>
+
+        <button (click)="saveCliente()" class="btn btn-success">Guardar Cliente</button>
+
+      </div>
+      <br><br>
+      <div *ngIf="submitted">
+        <h4>Se envió la información del Cliente!</h4>
+        <button class="btn btn-success" (click)="newClient()">Agregar Otro Cliente</button>
+      </div>
+      <br><br>
+    </div>
+  </div>
